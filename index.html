@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Channel 5 News</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        /* background: #303030; */
+        background: #fff;
+        border-radius: 50%;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: purple;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255, 16, 255);
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        background: linear-gradient(
+            45deg,
+            rgba(101, 1, 182, 0.4),
+            rgba(8, 1, 112, 0.9)
+          ),
+          url("CHANNEL 5 NEWS.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: #fff;
+        clip-path: polygon(100% 50%, 0 100%, 100% 100%);
+        margin-bottom: -1px;
+      }
+      .content {
+        width: 90%;
+        max-width: 900px;
+        padding: 0 20px;
+        position: relative;
+      }
+      .content h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 4rem;
+      }
+      .content p {
+        line-height: 1.6;
+        font-size: 1.25rem;
+      }
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 70px 0;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .about h2 span {
+        background-color: red;
+        color: #fff;
+        padding: 0 5px;
+      }
+      .about h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+      .about img {
+        padding: 10px;
+        width: 55%;
+        height: auto;
+        margin-right: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .about p {
+        padding: 20px;
+        /* width: 50%; */
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+      .about p span {
+        color: purple;
+      }
+      .breaking,
+      .other-news {
+        padding: 20px;
+        text-align: center;
+        color: #333;
+        background: #fff;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .breaking h2 {
+        margin: 0;
+        font-size: 2rem;
+        padding: 20px 0;
+      }
+      .breaking img {
+        width: 45%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .breaking p {
+        font-size: 1.25rem;
+        margin: 0 auto;
+        max-width: 800px;
+      }
+
+      .other-news h2 {
+        font-size: 2rem;
+        padding: 20px 0;
+      }
+
+      .other-news .story {
+        margin: 20px auto;
+        max-width: 600px;
+        text-align: left;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .other-news .story h3 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+
+      .other-news .story p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      @media screen and (max-width: 576px) {
+        .container {
+          background-position: center;
+        }
+        .content h2 {
+          font-size: 2.5rem;
+        }
+        .content p {
+          font-size: 1rem;
+        }
+        .about {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px;
+        }
+        .about img,
+        .about p {
+          width: auto;
+
+          margin: 0;
+        }
+        .about img {
+          width: 35%;
+          margin-bottom: 20px;
+        }
+      }
+
+      footer {
+        background-color: purple;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      footer .footer_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer .social-media a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.25rem;
+      }
+
+      footer .social-media a:hover {
+        color: lightgray;
+      }
+
+      footer .copyright {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="content">
+        <h2>Breaking News</h2>
+        <p>
+          Dominion Church Faces Allegations of Money Laundering and Unethical
+          Practices
+        </p>
+      </div>
+    </section>
+    <section class="about">
+      <h2>
+        <span>EXCLUSIVE</span>
+        Dominion Church has faced allegations of money laundering and unethical
+        behaviour. Linda Maseko investigative journalist
+      </h2>
+
+      <p>
+        <span>"Dominion, 21 August 2024</span> — In a shocking turn of events,
+        the venerable Dominion Church, led by its founding elders, the Frasers,
+        is now at the center of a high-profile investigation. The allegations?
+        Money laundering, financial fraud, and other unethical practices that
+        have rocked the religious community.
+        <span>Detective Brenard Takawira</span>, head of the elite Special
+        Crimes Unit (SCU), has been relentless in his pursuit of justice. His
+        team uncovered a web of suspicious financial transactions within the
+        church, raising serious concerns about the integrity of its operations.
+        The SCU, known for its expertise in tracking down white-collar
+        criminals, has been meticulously piecing together evidence against the
+        Frasers and their inner circle.
+      </p>
+
+      <p>
+        <img src="police.jpg" alt="scene" style="width: 90%" />
+        Here are the key points of the investigation:
+        <span>Money Laundering:</span> The heart of the case lies in the alleged
+        money laundering scheme orchestrated by the church. Large sums of money
+        flowed through various channels, obscuring their origins and purpose.
+        The SCU suspects that illicit funds were mixed with legitimate
+        donations, creating a complex financial web that spans continents.
+        <img src="Bishop.jpg" style="width: 90%" alt="scene" />
+        <span>Unexplained Wealth:</span>
+        The Frasers, once revered spiritual leaders, now face scrutiny over
+        their extravagant lifestyles. Lavish mansions, luxury cars, and overseas
+        bank accounts have raised eyebrows among their congregation. How did
+        they amass such wealth while preaching humility and devotion?.
+        <span>Undisclosed Business Ventures:</span> The church's financial
+        records reveal hidden business ventures—companies, real estate holdings,
+        and offshore accounts—that were never disclosed to their followers.
+        These ventures allegedly served as conduits for money laundering
+        activities. <span>Congregational Betrayal:</span> Congregants, who once
+        trusted the Frasers implicitly, now feel betrayed. Some have come
+        forward with evidence of financial coercion, claiming that their
+        donations were misused. Others report being pressured to invest in
+        dubious ventures under the guise of "divine blessings."
+        <span>The Veil of Secrecy:</span> Unlike other organizations, religious
+        institutions like Dominion Church enjoy a veil of financial secrecy.
+        They are not required to report financial information to the IRS or
+        their own members. This lack of transparency has allowed corruption to
+        fester unchecked. <span>The Role of Auditors:</span> Questions arise
+        about the auditors who failed to detect irregularities within the
+        church's finances. Were they complicit, negligent, or simply overwhelmed
+        by the complexity of the operation? As the investigation unfolds, the
+        faithful are left grappling with their shattered trust. The
+        once-hallowed halls of Dominion Church now echo with whispers of scandal
+        and betrayal. Will justice prevail, or will the Frasers continue to hide
+        behind their sacred robes? Stay tuned for further updates as Detective
+        Brenard Takawira and the SCU close in on the truth. The faithful demand
+        answers, and the world watches as this spiritual saga unfolds.
+      </p>
+    </section>
+
+    <section class="breaking">
+      <h2><span>Top Stories</span></h2>
+      <a href="#">
+        <img src="chairs.jpg" alt="story1" />
+      </a>
+      <p>
+        <strong
+          >How grassroots video is building a film industry in Zimbabwe</strong
+        >
+
+        <br /><br />
+        There is a general perception that there is no film industry to talk
+        about in Zimbabwe. This argument is mostly based on comparisons with
+        other well-resourced film economies, such as Hollywood, or even South
+        Africa`s. Based on my study of the Zimbabwean film industry I disagree
+        with this view. Zimbabwe does have a film industry, but perhaps, not one
+        that meets everyone`s expectations and certainly not one that can be
+        comparable to Hollywood`s formal value chain. Zimbabwe, like many other
+        developing countries, faces political and economic challenges and the
+        film industry`s problems are compounded by a lack of either governmental
+        or corporate support, which has led media scholar Nyasha Mboti to
+        observe that the sector is <span>“orphaned”</span> . There are,
+        nevertheless, efforts at the grassroots, of various informally
+        constituted cottage industries producing video-film products. These
+        include video-films shot in as little as a week, on very low to zero
+        budgets and by remarkably lean crews (who may also feature as the acting
+        talent). These efforts should be celebrated as indications of
+        enthusiasm, creative genius and sheer endeavour that auger well for the
+        future of an industry (by any definition). Making it work In a recent
+        paper I argue that making a film in most developing countries is
+        mégotage, as observed by the `father of African cinema`, Senegalese
+        filmmaker Ousmane Sembène. The mégotage metaphor means that producing a
+        film in such contexts is a desperate endeavour, akin to scrounging
+        around for cigarette butts. It is such a grit and grunt, huff and puff
+        affair, to the extent that even a 10-minute short film has to be
+        admired. Evidence on the ground shows that the mégotage sometimes pays
+        off. Zimbabweans are known for their resilience and ability to kiya-kiya
+        (`make things work` in the Shona language) when faced with what seems to
+        be a dead end. A large portion of the country`s economy is characterised
+        by such kiya-kiya efforts, as anthropologist Jeremy Jones observes.
+        Zimbabwe`s film industry appears to thrive under very difficult
+        circumstances. Recent video-films like Kushata Kwemoyo, Escape, Chinhoyi
+        7 and lately, the Netflix hit Cook Off, all made during the so-called
+        Zimbabwean crisis (stretching from around 2000 to date) showcase the
+        filmmaking talent and cinematographic capabilities abundant in the
+        country. It`s what once led film scholar Frank Ukadike, in his book
+        Black African Cinema, to remark that Zimbabwe was Africa`s Hollywood.
+      </p>
+    </section>
+    <section class="other-news">
+      <h2>In Other News</h2>
+      <div class="story">
+        <h3>
+          <a href="#"
+            >EDITORIAL COMMENT : SADC: A tried and trusted organisation</a
+          >
+        </h3>
+        <p>
+          The Mauritius Government has offered scholarships to zimbabwean
+          students willing to study in that country. <br />
+          The vice president of Mauritius Marie Boissezon extended the offer
+          after paying a courtesy call to vice president Dr Constantino Chiwenga
+          here. The duo is in India for this year`s Africa Conclave on
+          India-Africa Partnership that was organised by the Conference of
+          Indian Industry. Speaking after paying a courtesy call on VP Chiwenga,
+          VP Boissezon said they discussed the need for economic cooperation
+          between Zimbabwe and Mauritius. "We discussed how we can increase the
+          economic cooperation between Zimababwe and Mauritius. Africa as a
+          whole needs to be self-sufficient in terms of food" "Mauritius also
+          offers university scholarships for africans and we have also asked
+          students from Zimbabwe to take this opportunity and come to study in
+          Mauritius," said VP Boissezon. According to a recent World Education
+          Forum report, Mauritius ranks third out of the 38 African countries
+          surveyed in terms of education systems and skills development.
+        </p>
+      </div>
+      <div class="story">
+        <h3>
+          <a href="#"
+            >Jannik Sinner defeats Frances Tiafoe to win ATP Cincinnati Tennis
+            Open</a
+          >
+        </h3>
+        <p>
+          The world number one will ride a wave of momentum into next week`s US
+          Open after winning his fifth ATP title of 2024. Jannik Sinner has
+          lifted his third ATP Masters trophy, defeating Frances Tiafoe 7-6
+          (7/4), 6-2 to win the Cincinnati Open. The Italian warmed up for next
+          week`s US Open in style, biding his time in a hard-fought first set
+          before breaking the match open in the second.Tiafoe, whose game faded
+          after losing the first-set tiebreaker, still made an impression during
+          Monday`s encounter. The American, who moves into the ranking top-20,
+          saved three match points before Sinner claimed his 15th ATP career
+          title. Sinner hit 29 winners, including 13 aces, and broke Tiafoe
+          twice in the match. Cincinnati is the fifth trophy of 2024 for the
+          23-year-old, who began the season with an Australian Open crown in
+          Melbourne. “I`m happy, this was a very difficult week,” Sinner said.
+          “It was tough mentally but I tried to do my best. “Frances and I were
+          both tired from the (Sunday) semifinals and there was a lot of
+          tension. I`m just glad I kept my level in the important moments. I
+          handled the situations on court well. “There were many ups and downs,
+          but that`s normal. At the big moments of each match, I played well.”
+          Sinner heads to the August 26 start of the US Open as a major
+          favourite, standing more than 2,000 points clear of world number two
+          Novak Djokovic. “I`m confident, but it`s important to be able to
+          recover to be ready for New York,” the Italian said afterwards. “That
+          is the main goal of this US Open swing. “I`m happy to be in the
+          position I`m in. I have the hunger to keep playing. I hope to show
+          good tennis in New York.”Sinner is the youngest champion at the
+          Cincinnati Open since Andy Murray in 2008.
+        </p>
+      </div>
+      <div class="story">
+        <h3>
+          <a href="#"
+            >Thierry Henry resigns as coach of France's under-21 football squad
+            for 'personal reasons'</a
+          >
+        </h3>
+        <p>
+          Former football star Thierry Henry has stepped down as head coach of
+          France's under-21 football team after his squad lost the final of the
+          2024 Paris Olympics to Spain. Henry cited 'personal reasons',
+          according to the French Football Federation. Thierry Henry has decided
+          to step down from his role as coach of the France under-21 football
+          team after guiding the side to a silver medal at the 2024 Paris
+          Olympics, the French Football Federation (FFF) announced Monday. The
+          all-time leading goalscorer for Premier League giants Arsenal took
+          over as coach of the French youth side last summer and was under
+          contract until June 2025 but decided to step away for "personal
+          reasons", according to the FFF Earlier in July, former France
+          international Henry oversaw Les Bleuets' first run to the final of an
+          Olympics men's tournament since winning gold in the 1984 Games in Los
+          Angeles. His young side eventually went down 5-3 after extra time
+          against Spain to end a promising run that had started inauspiciously
+          after Henry was obliged to make several changes to his squad
+          pre-tournament due to the refusal of certain clubs to release their
+          players for the Games."I would like to thank the FFF and President
+          Philippe Diallo for giving me this incredible opportunity," said
+          Henry, 47, in an FFF statement. "Winning an Olympic silver medal for
+          my country will remain one of the proudest moments of my life. I'm
+          incredibly grateful to the federation, the players, the staff and the
+          fans for giving me this magical experience." Federation boss Diallo
+          thanked the 1998 World Cup winner for "all the work he accomplished as
+          coach of the Espoirs (under-21s) and Olympic sides". "We obviously
+          regret this decision, as Thierry Henry was able to achieve the
+          objectives set for him by winning a silver medal at the Olympic Games
+          in Paris," he added. "Having followed him throughout this campaign, I
+          witnessed first-hand his great professionalism, his rigour and his
+          love for the blue jersey."
+        </p>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_container">
+        <div class="social-media">
+          <a href="http://www.facebook.com/" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="http://www.twitter.com/" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="http://www.instagram.com/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="http://www.linkedin.com/" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+        <div class="copyright">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Channel 5 News All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
